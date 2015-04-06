@@ -176,7 +176,7 @@ module Ancestry
           node.without_ancestry_callbacks do
             node.update_attribute ancestry_column, ancestry
           end
-          build_ancestry_from_parent_ids! node.id, if ancestry.nil? then "#{node.id}" else "#{ancestry}/#{node.id}" end
+          build_ancestry_from_parent_ids! client_id, node.id, if ancestry.nil? then "#{node.id}" else "#{ancestry}/#{node.id}" end
         end
       end
     end
